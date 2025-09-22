@@ -1,6 +1,4 @@
 import java.util.*;
-import algoritms.MergeSort;
-import algoritms.QuickSort;
 import Utils.Metrics;
 import Utils.CsvWriter;
 
@@ -12,7 +10,7 @@ public class Main {
         CsvWriter csv = new CsvWriter("results.csv");
         csv.writeHeader("Algorithm","n","Time(ms)","Comparisons","Allocations","MaxDepth");
 
-        // --- MergeSort ---
+
         for (int n : sizes) {
             int[] arr = rand.ints(n, 0, 100000).toArray();
             Metrics.reset();
@@ -27,7 +25,7 @@ public class Main {
             );
         }
 
-        // --- QuickSort ---
+
         for (int n : sizes) {
             int[] arr = rand.ints(n, 0, 100000).toArray();
             Metrics.reset();
@@ -42,10 +40,10 @@ public class Main {
             );
         }
 
-        // --- Deterministic Select ---
+
         for (int n : sizes) {
             int[] arr = rand.ints(n, 0, 100000).toArray();
-            int k = n / 2; // median
+            int k = n / 2;
             Metrics.reset();
             Metrics.startTimer();
             int result = DeterministicSelectInput.select(arr, 0, arr.length - 1, k);
@@ -58,7 +56,7 @@ public class Main {
             );
         }
 
-        // --- Closest Pair of Points ---
+
         for (int n : sizes) {
             ClosetPair.Point[] points = new ClosetPair.Point[n];
             for (int i = 0; i < n; i++) {
