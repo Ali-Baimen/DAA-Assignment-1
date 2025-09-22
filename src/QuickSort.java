@@ -11,7 +11,6 @@ public class QuickSort {
         quickSort(arr, 0, arr.length - 1);
         Metrics.stopTimer();
     }
-
     private static void quickSort(int[] arr, int left, int right) {
         while (left < right) {
             Metrics.enterRecursion();
@@ -27,7 +26,6 @@ public class QuickSort {
             }
         }
     }
-
     private static int partition(int[] a, int l, int r, int pivotIndex) {
         Metrics.countAllocation();
         int pivotValue = a[pivotIndex];

@@ -10,7 +10,6 @@ public class MergeSort {
         mergeSort(arr, 0, arr.length - 1, buffer);
         Metrics.stopTimer();
     }
-
     private static void mergeSort(int[] arr, int left, int right, int[] buffer) {
         Metrics.enterRecursion();
         if (right - left <= 15) {
@@ -24,7 +23,6 @@ public class MergeSort {
         merge(arr, left, mid, right, buffer);
         Metrics.exitRecursion();
     }
-
     private static void merge(int[] arr, int left, int mid, int right, int[] buffer) {
         System.arraycopy(arr, left, buffer, left, right - left + 1);
         Metrics.countAllocation();
