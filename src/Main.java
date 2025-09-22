@@ -39,8 +39,6 @@ public class Main {
                     Metrics.getMaxDepth()
             );
         }
-
-
         for (int n : sizes) {
             int[] arr = rand.ints(n, 0, 100000).toArray();
             int k = n / 2;
